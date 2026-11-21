@@ -29,6 +29,10 @@ giao diện điều khiển hoàn toàn bằng remote.
 Bản phát hành kèm APK cũng nằm ở tab **Releases**:
 <https://github.com/haokiet97/auraflix_tv_release/releases>
 
+**Trang tải nhanh (GitHub Pages):** <https://haokiet97.github.io/auraflix_tv_release/>
+
+**Link rút gọn để gõ trên remote (Downloader):** `is.gd/auraflixtv` (dự phòng: `tinyurl.com/auraflixtv`)
+
 Kiểm tra file sau khi tải (Windows PowerShell):
 
 ```powershell
