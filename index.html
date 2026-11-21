@@ -1,0 +1,130 @@
+<!doctype html>
+<html lang="vi">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#14151c">
+<title>AuraFlix TV — Tải APK cho Android TV</title>
+<style>
+  :root{
+    --bg:#14151c; --surface:#1b1d26; --surface2:#23252f;
+    --accent:#ff5a5f; --accent2:#ff9a3d;
+    --text:#f5f6fa; --muted:#a6aab8;
+  }
+  *{box-sizing:border-box}
+  body{
+    margin:0; background:
+      radial-gradient(1200px 600px at 85% -10%, rgba(255,90,95,.22), transparent 60%),
+      radial-gradient(900px 500px at 0% 110%, rgba(255,154,61,.12), transparent 60%),
+      var(--bg);
+    color:var(--text);
+    font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif;
+    -webkit-font-smoothing:antialiased;
+  }
+  .wrap{max-width:960px; margin:0 auto; padding:48px 20px 64px}
+  .brand{display:flex; align-items:center; gap:10px; font-weight:900; letter-spacing:2px; font-size:22px}
+  .brand span{color:var(--accent)}
+  h1{font-size:clamp(26px,5vw,42px); line-height:1.15; margin:26px 0 10px; font-weight:900}
+  .sub{color:var(--muted); font-size:16px; line-height:1.6; max-width:640px; margin:0}
+  .cta{
+    display:inline-flex; flex-direction:column; align-items:center; justify-content:center;
+    margin-top:28px; padding:18px 34px; border-radius:14px;
+    background:linear-gradient(135deg,var(--accent),var(--accent2));
+    color:#fff; text-decoration:none; font-weight:800; font-size:20px;
+    box-shadow:0 12px 34px rgba(255,90,95,.35);
+  }
+  .cta small{font-weight:600; font-size:12px; opacity:.92; margin-top:4px}
+  .cta:active{transform:translateY(1px)}
+  .meta{display:flex; flex-wrap:wrap; gap:8px; margin-top:18px}
+  .chip{
+    background:rgba(255,255,255,.08); color:var(--muted);
+    padding:6px 12px; border-radius:999px; font-size:12.5px;
+  }
+  .grid{display:grid; grid-template-columns:repeat(auto-fit,minmax(180px,1fr)); gap:14px; margin-top:38px}
+  .card{background:var(--surface); border:1px solid rgba(255,255,255,.06); border-radius:12px; padding:16px 18px}
+  .card h3{margin:0 0 8px; font-size:15px}
+  .card p{margin:0; color:var(--muted); font-size:13.5px; line-height:1.6}
+  h2{font-size:19px; margin:44px 0 14px}
+  ol{margin:0; padding-left:22px; color:var(--muted); line-height:1.9; font-size:14.5px}
+  ol b{color:var(--text)}
+  code{background:rgba(255,255,255,.08); padding:2px 6px; border-radius:5px; font-size:12.5px; word-break:break-all}
+  .shots{display:grid; grid-template-columns:repeat(auto-fit,minmax(220px,1fr)); gap:12px; margin-top:14px}
+  .shots img{width:100%; border-radius:10px; border:1px solid rgba(255,255,255,.07); display:block}
+  footer{margin-top:48px; color:#74798a; font-size:12.5px; line-height:1.7}
+  footer a{color:var(--muted)}
+</style>
+</head>
+<body>
+<div class="wrap">
+
+  <div class="brand">AURA<span>FLIX</span></div>
+
+  <h1>AuraFlix TV<br>cho Android TV &amp; TV Box</h1>
+  <p class="sub">
+    Xem phim Vietsub/Thuyết minh với giao diện điều khiển hoàn toàn bằng remote.
+    Hỗ trợ phim lẻ, phim bộ, hoạt hình, TV Shows — phát 1080p bằng giải mã cứng.
+  </p>
+
+  <a class="cta" href="AuraFlixTV-1.0.0.apk" download>
+    ⬇ Tải APK v1.0.0
+    <small>3.02 MB · Android 5.0+ · không cần Google Play</small>
+  </a>
+
+  <div class="meta">
+    <span class="chip">minSdk 21</span>
+    <span class="chip">targetSdk 34</span>
+    <span class="chip">armeabi-v7a / arm64-v8a</span>
+    <span class="chip">Tested: S905X2 · Android 9</span>
+  </div>
+
+  <div class="grid">
+    <div class="card">
+      <h3>🎬 Nhiều nguồn phim</h3>
+      <p>Dữ liệu từ API công khai <code>phimapi.com</code> — cùng nguồn với AuraFlix.</p>
+    </div>
+    <div class="card">
+      <h3>⏯ Xem tiếp thông minh</h3>
+      <p>Tự lưu vị trí đang xem, gợi ý xem tiếp và tự chuyển tập sau 10 giây.</p>
+    </div>
+    <div class="card">
+      <h3>🔍 Tìm bằng remote</h3>
+      <p>Bàn phím ảo tối ưu D-pad, không cần chuột hay bàn phím ngoài.</p>
+    </div>
+    <div class="card">
+      <h3>⚡ Nhẹ &amp; ổn định</h3>
+      <p>APK 3 MB, RAM khi phát phim ~6 MB Java heap, không cần root.</p>
+    </div>
+  </div>
+
+  <h2>Cài bằng Downloader trên TV box</h2>
+  <ol>
+    <li>Cài app <b>Downloader</b> (AFTVnews) từ CH Play trên box.</li>
+    <li>Bật <b>Settings → Enable unknown sources</b> cho Downloader.</li>
+    <li>Mở Downloader, nhập địa chỉ: <code>is.gd/auraflixtv</code></li>
+    <li>File tự tải về, bấm <b>Install</b> khi được hỏi.</li>
+  </ol>
+
+  <h2>Hoặc cài bằng ADB</h2>
+  <ol>
+    <li><code>adb connect &lt;IP-box&gt;:5555</code></li>
+    <li><code>adb install -r AuraFlixTV-1.0.0.apk</code></li>
+  </ol>
+
+  <h2>Ảnh chụp</h2>
+  <div class="shots">
+    <img src="docs/screenshots/home.jpg" alt="Trang chủ">
+    <img src="docs/screenshots/detail.jpg" alt="Chi tiết phim">
+    <img src="docs/screenshots/player.jpg" alt="Trình phát">
+    <img src="docs/screenshots/browse.jpg" alt="Danh mục">
+  </div>
+
+  <footer>
+    SHA-256: <code>CCECF9D51AA87D0A9D43065958E364D83E5C769D598C4828C0BCBF9A5DFC02AB</code><br>
+    Bản release ký debug keystore để cài trực tiếp. Ứng dụng không lưu trữ hay phát tán phim;
+    bản quyền nội dung thuộc về đơn vị cung cấp gốc.<br>
+    <a href="https://github.com/haokiet97/auraflix_tv_release">Mã nguồn &amp; bản phát hành trên GitHub</a>
+  </footer>
+
+</div>
+</body>
+</html>
