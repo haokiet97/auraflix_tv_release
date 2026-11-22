@@ -105,7 +105,7 @@ Bản mới dùng cùng khoá ký nên nâng cấp tại chỗ, **giữ nguyên*
 # Tạo local.properties: sdk.dir=C:\\Users\\<you>\\AppData\\Local\\Android\\Sdk
 
 ./gradlew :app:assembleRelease   # APK ~3 MB
-./gradlew :app:testDebugUnitTest # 9 unit test: parse JSON + so sánh phiên bản
+./gradlew :app:testDebugUnitTest # 13 unit test: parse JSON, phiên bản, release notes
 ```
 
 APK ra ở `app/build/outputs/apk/release/app-release.apk` (~3 MB).
@@ -118,7 +118,7 @@ tạo keystore riêng và cấu hình `signingConfigs` trong `app/build.gradle.k
 | Hạng mục | Kết quả |
 |---|---|
 | `assembleDebug` / `assembleRelease` | ✅ thành công, không lỗi biên dịch |
-| Unit test parse JSON + so sánh phiên bản | ✅ 9/9 pass |
+| Unit test parse JSON + phiên bản + release notes | ✅ 13/13 pass |
 | `aapt2 dump badging` | ✅ có `leanback-launchable-activity`, banner 320×180, minSdk 21, targetSdk 34 |
 | Kích thước APK release | 3.04 MB |
 | **Chạy thật trên box N5Max (S905X2, Android 9, 1920×1080@320dpi)** | ✅ xem phim 1080p bằng giải mã cứng `OMX.amlogic.avc.decoder` |
