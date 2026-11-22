@@ -24,6 +24,7 @@ giao diện điều khiển hoàn toàn bằng remote.
 
 | Phiên bản | Tệp | Dung lượng | SHA-256 |
 |---|---|---|---|
+| 1.1.0 | [`AuraFlixTV-1.1.0.apk`](AuraFlixTV-1.1.0.apk) | 3.04 MB | `564B32D028F1A9F05C8F717D492E843A6170A77A8BB8716A9AE066C87A353EEF` |
 | 1.0.0 | [`AuraFlixTV-1.0.0.apk`](AuraFlixTV-1.0.0.apk) | 3.02 MB | `CCECF9D51AA87D0A9D43065958E364D83E5C769D598C4828C0BCBF9A5DFC02AB` |
 
 Bản phát hành kèm APK cũng nằm ở tab **Releases**:
@@ -36,7 +37,7 @@ Bản phát hành kèm APK cũng nằm ở tab **Releases**:
 Kiểm tra file sau khi tải (Windows PowerShell):
 
 ```powershell
-Get-FileHash .\AuraFlixTV-1.0.0.apk -Algorithm SHA256
+Get-FileHash .\AuraFlixTV-1.1.0.apk -Algorithm SHA256
 ```
 
 ---
@@ -47,10 +48,11 @@ Get-FileHash .\AuraFlixTV-1.0.0.apk -Algorithm SHA256
 |---|---|
 | Trang chủ | Banner phim mới tự luân chuyển, các hàng: Xem tiếp, Phim mới, Phim lẻ, Phim bộ, Hoạt hình, TV Shows, Chiếu rạp |
 | Danh mục | Lọc kết hợp **Loại + Thể loại + Quốc gia + Năm**, cuộn vô hạn |
-| Tìm kiếm | Bàn phím ảo tối ưu remote, tìm ngay khi ngừng gõ (debounce 400ms) |
+| Tìm kiếm | Bàn phím ảo có **phím dấu cách**, hỗ trợ **bàn phím USB/Bluetooth**, **chuột/chuột bay**; tìm ngay khi ngừng gõ (debounce 400ms) |
 | Chi tiết | Poster, backdrop, thông tin, mô tả, chọn nguồn phát, chọn tập, phim liên quan, yêu thích |
 | Trình phát | ExoPlayer (Media3) + HLS, tự chọn chất lượng, resume, chuyển tập, đổi nguồn khi lỗi |
-| Điều khiển | ◀ ▶ tua ±10s, OK play/pause, ▲▼ hiện thanh điều khiển, Back thoát |
+| Điều khiển | ◀ ▶ tua ±10s, OK play/pause, ▲▼ hiện thanh điều khiển, Back thoát; chuột bấm/rê để focus |
+| Cập nhật | **OTA trong Cài đặt**: kiểm tra bản mới, xem ghi chú, tải có tiến độ, xác thực SHA-256 và cài đè giữ dữ liệu |
 | Tiện ích | Lịch sử xem, xem tiếp, yêu thích, phóng to khung hình, tốc độ phát, cài đặt máy chủ API |
 
 ## 2. Yêu cầu
@@ -81,6 +83,16 @@ Sau đó mở app **AuraFlix** trong hàng ứng dụng của Android TV.
 
 Tải APK lên Google Drive/OneDrive rồi nhập link bằng app **Downloader** trên box.
 
+### Cập nhật từ bản cũ (OTA)
+
+1. Mở **Cài đặt → Cập nhật ứng dụng** (app tự kiểm tra khi mở; có thể bấm **Kiểm tra cập nhật**).
+2. Khi có bản mới, bấm **Cập nhật ngay** và theo dõi thanh tiến độ.
+3. Tải xong, bấm **Cài đặt ngay** và xác nhận trên hộp thoại của Android.
+4. Nếu box chưa cho phép, bật *Cài đặt ứng dụng không rõ nguồn gốc* cho AuraFlix rồi bấm lại.
+
+APK được tải trực tiếp trong app và đối chiếu **SHA-256** với GitHub trước khi cài.
+Bản mới dùng cùng khoá ký nên nâng cấp tại chỗ, **giữ nguyên** lịch sử xem, yêu thích và cài đặt.
+
 ## 4. Build từ source
 
 ```bash
@@ -88,7 +100,7 @@ Tải APK lên Google Drive/OneDrive rồi nhập link bằng app **Downloader**
 # Tạo local.properties: sdk.dir=C:\\Users\\<you>\\AppData\\Local\\Android\\Sdk
 
 ./gradlew :app:assembleRelease   # APK ~3 MB
-./gradlew :app:testDebugUnitTest # 5 unit test cho tầng parse JSON
+./gradlew :app:testDebugUnitTest # 9 unit test: parse JSON + so sánh phiên bản
 ```
 
 APK ra ở `app/build/outputs/apk/release/app-release.apk` (~3 MB).
@@ -101,10 +113,12 @@ tạo keystore riêng và cấu hình `signingConfigs` trong `app/build.gradle.k
 | Hạng mục | Kết quả |
 |---|---|
 | `assembleDebug` / `assembleRelease` | ✅ thành công, không lỗi biên dịch |
-| Unit test parse JSON (list / detail / taxonomy / unknown field / UTF-8) | ✅ 5/5 pass |
+| Unit test parse JSON + so sánh phiên bản | ✅ 9/9 pass |
 | `aapt2 dump badging` | ✅ có `leanback-launchable-activity`, banner 320×180, minSdk 21, targetSdk 34 |
-| Kích thước APK release | 3.02 MB |
+| Kích thước APK release | 3.04 MB |
 | **Chạy thật trên box N5Max (S905X2, Android 9, 1920×1080@320dpi)** | ✅ xem phim 1080p bằng giải mã cứng `OMX.amlogic.avc.decoder` |
+| Tìm kiếm trên box | ✅ gõ bàn phím, dấu cách, bấm chuột mở phim; phím ảo có "Dấu cách" |
+| Kiểm tra cập nhật trên box | ✅ báo đúng "Bạn đang dùng bản mới nhất (v1.1.0)" |
 | Crash / ANR sau toàn bộ luồng test | ✅ không có trong logcat |
 | Bộ nhớ khi đang phát phim | Java heap ~6 MB, Native ~10 MB |
 
@@ -121,6 +135,7 @@ com.auraflix.tv
 │   ├── model/              # DTO khớp JSON của phimapi.com
 │   ├── net/                # OkHttp + kotlinx.serialization (cache 128MB)
 │   ├── repo/               # MovieRepository, UserDataRepository (DataStore)
+│   ├── update/             # AppVersion (so sánh phiên bản), UpdateManager (OTA)
 │   └── util/               # format thời gian, text
 ├── ui/
 │   ├── theme/              # màu, MaterialTheme cho TV
@@ -156,6 +171,8 @@ Nếu domain API thay đổi, vào **Cài đặt → Máy chủ dữ liệu phim
 | Trang chủ báo lỗi mạng | Kiểm tra Internet; thử đổi *Máy chủ dữ liệu phim* trong Cài đặt |
 | Poster trắng | CDN ảnh đổi domain → app tự đọc `APP_DOMAIN_CDN_IMAGE`, thử tải lại |
 | Video không phát | Bấm **Đổi nguồn phát** (nếu phim có nhiều server); nếu vẫn lỗi, nguồn phim gốc đang chết |
+| Cập nhật báo lỗi mạng | Kiểm tra Internet rồi bấm **Kiểm tra cập nhật** lại; box cần truy cập được `api.github.com` |
+| Bấm Cài đặt ngay nhưng không hiện hộp thoại | Bật *Cài đặt ứng dụng không rõ nguồn gốc* cho AuraFlix trong phần Cài đặt Android, rồi bấm lại |
 | Remote không di chuyển | Đảm bảo dùng remote/chuột bay ở chế độ D-pad, không phải chế độ chuột |
 | App không hiện trên launcher | Box không chuẩn Android TV → mở bằng mục *Ứng dụng* hoặc qua ADB (`am start`) |
 

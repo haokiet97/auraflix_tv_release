@@ -151,6 +151,15 @@ app/src/main/java/com/auraflix/tv/
 - [x] Build **release APK** (R8 + shrink, ký debug key) — **3.02 MB**
 - [x] `README.md` hướng dẫn cài đặt, ảnh chụp thực tế từ TV box
 
+### Phase 6 — v1.1.0: nhập liệu & cập nhật OTA ✅
+- [x] Tìm kiếm: thêm phím **Dấu cách** trên bàn phím ảo
+- [x] Tìm kiếm: nhận **bàn phím USB/Bluetooth** (chữ, số, dấu cách, Backspace, Enter)
+- [x] Toàn app: **chuột/chuột bay** — rê để focus, bấm để chọn (`TvFocusable`)
+- [x] `UpdateManager`: kiểm tra GitHub Releases, so sánh phiên bản, tải APK có tiến độ
+- [x] Xác thực **SHA-256** + cài qua **FileProvider** (nâng cấp tại chỗ, giữ dữ liệu)
+- [x] Settings: mục **Cập nhật ứng dụng** (tự kiểm tra khi mở + nút kiểm tra thủ công)
+- [x] Build release **v1.1.0** (versionCode 2), cập nhật README/site/release notes
+
 
 ## 6. Tiêu chí nghiệm thu
 
@@ -170,7 +179,11 @@ Live TV / bóng đá, tài khoản đăng nhập, bình luận, tải offline, c
 
 ## 8. Trạng thái triển khai (cập nhật)
 
-**Đã hoàn thành toàn bộ Phase 0 → 5.** APK release: `app/build/outputs/apk/release/app-release.apk` (3.02 MB).
+**Đã hoàn thành toàn bộ Phase 0 → 6.** APK release v1.1.0: `app/build/outputs/apk/release/app-release.apk` (3.04 MB).
+
+**v1.1.0** bổ sung: phím dấu cách + bàn phím ngoài + chuột cho tìm kiếm, và mục
+**Cài đặt → Cập nhật ứng dụng** (kiểm tra GitHub Releases, tải OTA, xác thực SHA-256,
+cài đè giữ nguyên dữ liệu).
 
 Các điều chỉnh so với kế hoạch ban đầu (đều có lợi cho độ ổn định):
 
