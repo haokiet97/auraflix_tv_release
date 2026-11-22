@@ -24,6 +24,7 @@ giao diện điều khiển hoàn toàn bằng remote.
 
 | Phiên bản | Tệp | Dung lượng | SHA-256 |
 |---|---|---|---|
+| 1.1.2 | [`AuraFlixTV-1.1.2.apk`](AuraFlixTV-1.1.2.apk) | 3.04 MB | `62DAE787935D7E62FFA7CBABECAD40C3BF474AF319DD0915BA0B32BE6F8D3409` |
 | 1.1.1 | [`AuraFlixTV-1.1.1.apk`](AuraFlixTV-1.1.1.apk) | 3.04 MB | `426BE35AC4BC8C9025F9EE4A2A4B0DCA93A08BDAB13D240C5BA8A59D77A5E52C` |
 | 1.1.0 | [`AuraFlixTV-1.1.0.apk`](AuraFlixTV-1.1.0.apk) | 3.04 MB | `D7AEE06A12CA30D92D09949F4395FFB70CD2DEA8E19F0A9C66283A3CD056C9D4` |
 | 1.0.0 | [`AuraFlixTV-1.0.0.apk`](AuraFlixTV-1.0.0.apk) | 3.02 MB | `CCECF9D51AA87D0A9D43065958E364D83E5C769D598C4828C0BCBF9A5DFC02AB` |
@@ -40,7 +41,7 @@ Bản phát hành kèm APK cũng nằm ở tab **Releases**:
 Kiểm tra file sau khi tải (Windows PowerShell):
 
 ```powershell
-Get-FileHash .\AuraFlixTV-1.1.1.apk -Algorithm SHA256
+Get-FileHash .\AuraFlixTV-1.1.2.apk -Algorithm SHA256
 ```
 
 ---
@@ -54,7 +55,7 @@ Get-FileHash .\AuraFlixTV-1.1.1.apk -Algorithm SHA256
 | Tìm kiếm | Bàn phím ảo có **phím Space** ở hàng cuối, hỗ trợ **bàn phím USB/Bluetooth**, **chuột/chuột bay**; tìm ngay khi ngừng gõ (debounce 400ms) |
 | Chi tiết | Poster, backdrop, thông tin, mô tả, chọn nguồn phát, chọn tập, phim liên quan, yêu thích |
 | Trình phát | ExoPlayer (Media3) + HLS, tự chọn chất lượng, resume, chuyển tập, đổi nguồn khi lỗi |
-| Điều khiển | ◀ ▶ tua ±10s, OK play/pause, ▲▼ hiện thanh điều khiển, Back thoát; chuột bấm/rê để focus |
+| Điều khiển | ◀ ▶ tua ±10s và hiện thanh công cụ; OK/▲/▼ hiện thanh công cụ; OK chọn nút đang focus; Back thoát; chuột bấm/rê để focus |
 | Cập nhật | **OTA trong Cài đặt**: kiểm tra bản mới, xem ghi chú, tải có tiến độ, xác thực SHA-256 và cài đè giữ dữ liệu |
 | Tiện ích | Lịch sử xem, xem tiếp, yêu thích, phóng to khung hình, tốc độ phát, cài đặt máy chủ API |
 
@@ -124,7 +125,8 @@ tạo keystore riêng và cấu hình `signingConfigs` trong `app/build.gradle.k
 | Kích thước APK release | 3.04 MB |
 | **Chạy thật trên box N5Max (S905X2, Android 9, 1920×1080@320dpi)** | ✅ xem phim 1080p bằng giải mã cứng `OMX.amlogic.avc.decoder` |
 | Tìm kiếm trên box | ✅ phím **Space** ở hàng cuối, gõ bàn phím, bấm chuột chèn khoảng trắng và mở phim |
-| Kiểm tra cập nhật trên box | ✅ báo đúng "Bạn đang dùng bản mới nhất (v1.1.1)" |
+| Điều khiển trình phát trên box | ✅ thanh công cụ ẩn → nhấn OK/▲/▼/◀/▶ đều hiện lại; ◀/▶ tua ±10s |
+| Kiểm tra cập nhật trên box | ✅ báo đúng "Bạn đang dùng bản mới nhất (v1.1.2)" |
 | Crash / ANR sau toàn bộ luồng test | ✅ không có trong logcat |
 | Bộ nhớ khi đang phát phim | Java heap ~6 MB, Native ~10 MB |
 

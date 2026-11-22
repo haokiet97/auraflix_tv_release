@@ -104,7 +104,7 @@ app/src/main/java/com/auraflix/tv/
 - **Tìm kiếm**: **bàn phím ảo tự vẽ** (D-pad di chuyển, OK chọn) — tránh IME lỗi trên box; kèm lịch sử tìm kiếm.
 - **Chi tiết**: backdrop full-width, poster, meta (năm, chất lượng, ngôn ngữ, thời lượng), mô tả mở rộng, nút **Phát** / **Yêu thích**, danh sách tập theo server (tab), phim liên quan.
 - **Player**: overlay tự ẩn sau 3s
-  - ◀/▶ seek ±10s, OK play/pause, ▲/▼ hiện controls
+  - ◀/▶ seek ±10s (thanh công cụ ẩn) và hiện controls; OK/▲/▼ hiện controls
   - OSD: timeline, tên phim/tập, nút Tập tiếp, Tốc độ, Tỉ lệ khung hình, Chọn server
   - Lưu vị trí xem mỗi 5s → hỏi "Xem tiếp từ 12:34?"
   - Tự phát tập kế với countdown 10s ở cuối tập
@@ -160,6 +160,7 @@ app/src/main/java/com/auraflix/tv/
 - [x] Settings: mục **Cập nhật ứng dụng** (tự kiểm tra khi mở + nút kiểm tra thủ công)
 - [x] Build release **v1.1.0** (versionCode 2), cập nhật README/site/release notes
 - [x] **v1.1.1**: đưa phím **Space** vào hàng chữ cuối, nhãn “Space”, cột bàn phím cuộn được trên TV thấp
+- [x] **v1.1.2**: thanh công cụ trình phát hiện khi nhấn **OK/▲/▼/◀/▶**; không tua nhầm khi mở overlay
 
 
 ## 6. Tiêu chí nghiệm thu
@@ -180,8 +181,10 @@ Live TV / bóng đá, tài khoản đăng nhập, bình luận, tải offline, c
 
 ## 8. Trạng thái triển khai (cập nhật)
 
-**Đã hoàn thành toàn bộ Phase 0 → 6.** APK release v1.1.1: `app/build/outputs/apk/release/app-release.apk` (3.04 MB).
+**Đã hoàn thành toàn bộ Phase 0 → 6.** APK release v1.1.2: `app/build/outputs/apk/release/app-release.apk` (3.04 MB).
 
+**v1.1.2** sửa điều khiển trình phát: nhấn **OK/▲/▼/◀/▶** đều hiện thanh công cụ (trước đây chỉ ▲/▼),
+và không tua phim khi đang mở danh sách tập/màn hình lỗi/overlay hết tập.
 **v1.1.1** đưa phím **Space** lên hàng chữ cuối (nhãn “Space”, tránh bị overscan che) và cho
 cột bàn phím cuộn được trên TV màn hình thấp. **v1.1.0** bổ sung phím dấu cách + bàn phím ngoài
 + chuột cho tìm kiếm, và mục **Cài đặt → Cập nhật ứng dụng** (kiểm tra GitHub Releases, tải OTA,
