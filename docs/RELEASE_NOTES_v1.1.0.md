@@ -9,7 +9,7 @@
 | Phiên bản | 1.1.0 (versionCode 2) |
 | Tệp | `AuraFlixTV-1.1.0.apk` |
 | Dung lượng | 3.04 MB |
-| SHA-256 | `564B32D028F1A9F05C8F717D492E843A6170A77A8BB8716A9AE066C87A353EEF` |
+| SHA-256 | `D7AEE06A12CA30D92D09949F4395FFB70CD2DEA8E19F0A9C66283A3CD056C9D4` |
 | Yêu cầu | Android 5.0 (API 21) trở lên · không cần Google Play Services · không cần root |
 | Đã kiểm thử | N5Max (Amlogic S905X2, Android 9, 1920×1080, armeabi-v7a) |
 
@@ -33,8 +33,11 @@
 
 ## Nâng cấp
 
-Từ v1.0.0, cách nhanh nhất là mở **Cài đặt → Cập nhật ứng dụng → Cập nhật ngay**.
-Hoặc cài đè bằng ADB (giữ nguyên dữ liệu):
+> **Lưu ý:** v1.0.0 **chưa có** tính năng OTA. Nếu đang dùng v1.0.0, hãy cài đè
+> `AuraFlixTV-1.1.0.apk` **một lần** bằng ADB, USB hoặc Downloader. Dữ liệu vẫn được giữ nguyên.
+> Từ v1.1.0 trở đi, các bản sau cập nhật trực tiếp trong **Cài đặt → Cập nhật ứng dụng**.
+
+Cài đè bằng ADB (giữ nguyên dữ liệu):
 
 ```bash
 adb connect <IP-box>:5555

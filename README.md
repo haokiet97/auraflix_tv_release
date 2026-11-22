@@ -24,7 +24,7 @@ giao diện điều khiển hoàn toàn bằng remote.
 
 | Phiên bản | Tệp | Dung lượng | SHA-256 |
 |---|---|---|---|
-| 1.1.0 | [`AuraFlixTV-1.1.0.apk`](AuraFlixTV-1.1.0.apk) | 3.04 MB | `564B32D028F1A9F05C8F717D492E843A6170A77A8BB8716A9AE066C87A353EEF` |
+| 1.1.0 | [`AuraFlixTV-1.1.0.apk`](AuraFlixTV-1.1.0.apk) | 3.04 MB | `D7AEE06A12CA30D92D09949F4395FFB70CD2DEA8E19F0A9C66283A3CD056C9D4` |
 | 1.0.0 | [`AuraFlixTV-1.0.0.apk`](AuraFlixTV-1.0.0.apk) | 3.02 MB | `CCECF9D51AA87D0A9D43065958E364D83E5C769D598C4828C0BCBF9A5DFC02AB` |
 
 Bản phát hành kèm APK cũng nằm ở tab **Releases**:
@@ -32,7 +32,9 @@ Bản phát hành kèm APK cũng nằm ở tab **Releases**:
 
 **Trang tải nhanh (GitHub Pages):** <https://haokiet97.github.io/auraflix_tv_release/>
 
-**Link rút gọn để gõ trên remote (Downloader):** `is.gd/auraflixtv` (dự phòng: `tinyurl.com/auraflixtv`)
+**Link rút gọn luôn tải bản mới nhất (Downloader):** `is.gd/auraflixtv2` (dự phòng: `tinyurl.com/auraflixtv2`)
+
+> Link cũ `is.gd/auraflixtv` vẫn trỏ tới bản 1.0.0; hãy dùng link mới để nhận v1.1.0.
 
 Kiểm tra file sau khi tải (Windows PowerShell):
 
@@ -84,6 +86,9 @@ Sau đó mở app **AuraFlix** trong hàng ứng dụng của Android TV.
 Tải APK lên Google Drive/OneDrive rồi nhập link bằng app **Downloader** trên box.
 
 ### Cập nhật từ bản cũ (OTA)
+
+> **Lưu ý:** v1.0.0 chưa có tính năng OTA. Nếu đang dùng v1.0.0, hãy cài đè v1.1.0 **một lần**
+> bằng ADB/USB/Downloader. Từ v1.1.0 trở đi, các bản sau cập nhật trực tiếp trong Cài đặt.
 
 1. Mở **Cài đặt → Cập nhật ứng dụng** (app tự kiểm tra khi mở; có thể bấm **Kiểm tra cập nhật**).
 2. Khi có bản mới, bấm **Cập nhật ngay** và theo dõi thanh tiến độ.
