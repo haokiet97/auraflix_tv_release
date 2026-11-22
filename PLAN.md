@@ -104,7 +104,8 @@ app/src/main/java/com/auraflix/tv/
 - **Tìm kiếm**: **bàn phím ảo tự vẽ** (D-pad di chuyển, OK chọn) — tránh IME lỗi trên box; kèm lịch sử tìm kiếm.
 - **Chi tiết**: backdrop full-width, poster, meta (năm, chất lượng, ngôn ngữ, thời lượng), mô tả mở rộng, nút **Phát** / **Yêu thích**, danh sách tập theo server (tab), phim liên quan.
 - **Player**: overlay tự ẩn sau 3s
-  - ◀/▶ seek ±10s (thanh công cụ ẩn) và hiện controls; OK/▲/▼ hiện controls
+  - ◀/▶ seek ±10s (thanh công cụ ẩn); **giữ ◀/▶ tua tăng dần 10→60s/bước, có OSD**
+  - OK/▲/▼ hiện controls; ◀/▶ khi controls hiện để di chuyển focus
   - OSD: timeline, tên phim/tập, nút Tập tiếp, Tốc độ, Tỉ lệ khung hình, Chọn server
   - Lưu vị trí xem mỗi 5s → hỏi "Xem tiếp từ 12:34?"
   - Tự phát tập kế với countdown 10s ở cuối tập
@@ -161,6 +162,7 @@ app/src/main/java/com/auraflix/tv/
 - [x] Build release **v1.1.0** (versionCode 2), cập nhật README/site/release notes
 - [x] **v1.1.1**: đưa phím **Space** vào hàng chữ cuối, nhãn “Space”, cột bàn phím cuộn được trên TV thấp
 - [x] **v1.1.2**: thanh công cụ trình phát hiện khi nhấn **OK/▲/▼/◀/▶**; không tua nhầm khi mở overlay
+- [x] **v1.1.3**: **giữ ◀/▶ để tua tăng dần** (10→60 giây/bước) + OSD tổng thời lượng; tài liệu `docs/FEATURES.md`
 
 
 ## 6. Tiêu chí nghiệm thu
@@ -181,8 +183,10 @@ Live TV / bóng đá, tài khoản đăng nhập, bình luận, tải offline, c
 
 ## 8. Trạng thái triển khai (cập nhật)
 
-**Đã hoàn thành toàn bộ Phase 0 → 6.** APK release v1.1.2: `app/build/outputs/apk/release/app-release.apk` (3.04 MB).
+**Đã hoàn thành toàn bộ Phase 0 → 6.** APK release v1.1.3: `app/build/outputs/apk/release/app-release.apk` (3.04 MB).
 
+**v1.1.3** thêm **giữ ◀/▶ để tua tăng dần** (10→20→30→40→50→60 giây/bước, có OSD tổng thời lượng)
+và tài liệu tính năng chi tiết [`docs/FEATURES.md`](docs/FEATURES.md).
 **v1.1.2** sửa điều khiển trình phát: nhấn **OK/▲/▼/◀/▶** đều hiện thanh công cụ (trước đây chỉ ▲/▼),
 và không tua phim khi đang mở danh sách tập/màn hình lỗi/overlay hết tập.
 **v1.1.1** đưa phím **Space** lên hàng chữ cuối (nhãn “Space”, tránh bị overscan che) và cho
