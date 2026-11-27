@@ -164,6 +164,15 @@ app/src/main/java/com/auraflix/tv/
 - [x] **v1.1.2**: thanh công cụ trình phát hiện khi nhấn **OK/▲/▼/◀/▶**; không tua nhầm khi mở overlay
 - [x] **v1.1.3**: **giữ ◀/▶ để tua tăng dần** (10→60 giây/bước) + OSD tổng thời lượng; tài liệu `docs/FEATURES.md`
 
+### Phase 7 — Bản Mobile (điện thoại) ✅
+- [x] Tách module `:shared` (Android library): model, net, repository, OTA, util và toàn bộ ViewModel
+- [x] `:app` (TV) chỉ còn lớp UI, thêm `implementation(project(":shared"))` — build/test vẫn xanh
+- [x] Module `:mobile` (`com.auraflix.mobile`), Material3 cảm ứng, bottom navigation
+- [x] Trang chủ (banner tự chuyển + Xem tiếp + hàng phim), Danh mục (grid + bottom sheet lọc), Tìm kiếm (bàn phím hệ thống), Chi tiết (sheet chọn tập), Yêu thích, Cài đặt
+- [x] Trình phát cảm ứng: tự xoay ngang, ẩn thanh hệ thống, double-tap tua ±10s, kéo seek bar, chọn tập/nguồn/tốc độ/tỉ lệ
+- [x] OTA riêng qua `UpdateManager.MOBILE_RELEASE_URL`; tài liệu [`docs/MOBILE.md`](docs/MOBILE.md)
+- [x] APK release `AuraFlixMobile-1.0.0.apk` (3.07 MB) + smoke test emulator Android 34, không crash/ANR
+
 
 ## 6. Tiêu chí nghiệm thu
 

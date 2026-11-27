@@ -3,6 +3,13 @@
 Ứng dụng xem phim **dành riêng cho Android TV / TV Box** (Amlogic S905X2, Xiaomi Box, Google TV…),
 giao diện điều khiển hoàn toàn bằng remote.
 
+> 📱 **Bản Mobile (điện thoại cảm ứng):** dùng chung tầng dữ liệu, APK riêng
+> `com.auraflix.mobile` — xem [`docs/MOBILE.md`](docs/MOBILE.md).
+> Build: `./gradlew :mobile:assembleRelease`.
+
+> 📺 **Điều khiển TV bằng điện thoại (cùng Wi-Fi):** ghép cặp bằng PIN, chọn phim và điều khiển
+> phát/tạm dừng/tua trên điện thoại — xem [`docs/CAST.md`](docs/CAST.md).
+
 > Nội dung lấy từ API công khai mà website `auraflix.vip` đang sử dụng (`phimapi.com`).
 > Ứng dụng không lưu trữ hay phát tán phim; toàn bộ bản quyền thuộc về đơn vị cung cấp gốc.
 
@@ -27,6 +34,7 @@ giao diện điều khiển hoàn toàn bằng remote.
 
 | Phiên bản | Tệp | Dung lượng | SHA-256 |
 |---|---|---|---|
+| 1.2.0 | [`AuraFlixTV-1.2.0.apk`](AuraFlixTV-1.2.0.apk) | 3.07 MB | `29C69408C117D4A90CC5557238CE74B3D32F1441515ED5E600F93C8EB9F0022A` |
 | 1.1.3 | [`AuraFlixTV-1.1.3.apk`](AuraFlixTV-1.1.3.apk) | 3.04 MB | `EDCCE6C960BA70475F45B2236A65B384559EE6E0EC31A5C8CD3A71275054C83F` |
 | 1.1.2 | [`AuraFlixTV-1.1.2.apk`](AuraFlixTV-1.1.2.apk) | 3.04 MB | `62DAE787935D7E62FFA7CBABECAD40C3BF474AF319DD0915BA0B32BE6F8D3409` |
 | 1.1.1 | [`AuraFlixTV-1.1.1.apk`](AuraFlixTV-1.1.1.apk) | 3.04 MB | `426BE35AC4BC8C9025F9EE4A2A4B0DCA93A08BDAB13D240C5BA8A59D77A5E52C` |
@@ -45,8 +53,23 @@ Bản phát hành kèm APK cũng nằm ở tab **Releases**:
 Kiểm tra file sau khi tải (Windows PowerShell):
 
 ```powershell
-Get-FileHash .\AuraFlixTV-1.1.3.apk -Algorithm SHA256
+Get-FileHash .\AuraFlixTV-1.2.0.apk -Algorithm SHA256
 ```
+
+## Tải APK Mobile (điện thoại)
+
+| Phiên bản | Tệp | Dung lượng | SHA-256 |
+|---|---|---|---|
+| 1.1.0 | [`AuraFlixMobile-1.1.0.apk`](https://github.com/haokiet97/auraflix_mobile_release/releases/download/v1.1.0/AuraFlixMobile-1.1.0.apk) | 3.13 MB | `4E86D2279A36CC32F09A4D0C87C99F60F6D161519505308C457F6B63399EB025` |
+| 1.0.3 | [`AuraFlixMobile-1.0.3.apk`](https://github.com/haokiet97/auraflix_mobile_release/releases/download/v1.0.3/AuraFlixMobile-1.0.3.apk) | 3.07 MB | `F43903BAE6F95192721F4429461D70882CBDB0ECCC65B714B8AB5ECDAF88010C` |
+| 1.0.2 | [`AuraFlixMobile-1.0.2.apk`](https://github.com/haokiet97/auraflix_mobile_release/releases/download/v1.0.2/AuraFlixMobile-1.0.2.apk) | 3.07 MB | `733EAADF72E2B497701440C275330149CBD9DFC03E5A0D0131723252505257D9` |
+| 1.0.1 | [`AuraFlixMobile-1.0.1.apk`](https://github.com/haokiet97/auraflix_mobile_release/releases/download/v1.0.1/AuraFlixMobile-1.0.1.apk) | 3.07 MB | `F52A319E6AA91E7151A04B1D32F1E184561BD98D21188B6A4CFE9515BCB8BD06` |
+| 1.0.0 | [`AuraFlixMobile-1.0.0.apk`](https://github.com/haokiet97/auraflix_mobile_release/releases/download/v1.0.0/AuraFlixMobile-1.0.0.apk) | 3.07 MB | `05933F834AD47BDC2BEA10AE94B9BD930C3A8E9D319CECA88194B73FE3565BDD` |
+
+- Trang giới thiệu & tải nhanh: <https://haokiet97.github.io/auraflix_mobile_release/>
+- Trang phát hành: <https://github.com/haokiet97/auraflix_mobile_release/releases/latest>
+- Hướng dẫn & ảnh chụp: [`docs/MOBILE.md`](docs/MOBILE.md)
+- Quy trình phát hành: [`docs/RELEASE_GUIDE_MOBILE.md`](docs/RELEASE_GUIDE_MOBILE.md)
 
 ---
 
@@ -62,6 +85,7 @@ Get-FileHash .\AuraFlixTV-1.1.3.apk -Algorithm SHA256
 | Tua nhanh | Nhấn ◀/▶ tua ±10s; **giữ ◀/▶** tua tăng dần 10→60 giây/bước, có OSD tổng thời lượng |
 | Điều khiển | ◀ ▶ tua ±10s và hiện OSD; OK/▲/▼ hiện thanh công cụ; OK chọn nút đang focus; Back thoát; chuột bấm/rê để focus |
 | Cập nhật | **OTA trong Cài đặt**: kiểm tra bản mới, xem ghi chú, tải có tiến độ, xác thực SHA-256 và cài đè giữ dữ liệu |
+| Điều khiển bằng điện thoại | TV mở HTTP server trong LAN + mã PIN; điện thoại cùng Wi-Fi tự tìm thấy TV, chọn phim và phát trên TV, tua, chuyển tập ([chi tiết](docs/CAST.md)) |
 | Tiện ích | Lịch sử xem, xem tiếp, yêu thích, phóng to khung hình, tốc độ phát, cài đặt máy chủ API |
 
 ## 2. Yêu cầu
@@ -111,11 +135,16 @@ Bản mới dùng cùng khoá ký nên nâng cấp tại chỗ, **giữ nguyên*
 # Yêu cầu: JDK 17, Android SDK (platform 35, build-tools 35.0.0)
 # Tạo local.properties: sdk.dir=C:\\Users\\<you>\\AppData\\Local\\Android\\Sdk
 
-./gradlew :app:assembleRelease   # APK ~3 MB
-./gradlew :app:testDebugUnitTest # 13 unit test: parse JSON, phiên bản, release notes
+./gradlew :app:assembleRelease       # APK TV ~3 MB
+./gradlew :mobile:assembleRelease    # APK Mobile ~3.1 MB
+./gradlew :app:testDebugUnitTest     # 19 unit test: parse JSON, phiên bản, release notes, giao thức cast
 ```
 
-APK ra ở `app/build/outputs/apk/release/app-release.apk` (~3 MB).
+APK ra ở `app/build/outputs/apk/release/app-release.apk` (~3 MB)
+và `mobile/build/outputs/apk/release/mobile-release.apk` (bản điện thoại).
+
+Cấu trúc module: `:shared` (dữ liệu + ViewModel dùng chung), `:app` (UI TV), `:mobile` (UI cảm ứng).
+
 
 Bản release hiện ký bằng debug keystore để tiện cài trực tiếp. Nếu phát hành chính thức,
 tạo keystore riêng và cấu hình `signingConfigs` trong `app/build.gradle.kts`.
@@ -125,9 +154,9 @@ tạo keystore riêng và cấu hình `signingConfigs` trong `app/build.gradle.k
 | Hạng mục | Kết quả |
 |---|---|
 | `assembleDebug` / `assembleRelease` | ✅ thành công, không lỗi biên dịch |
-| Unit test parse JSON + phiên bản + release notes | ✅ 13/13 pass |
+| Unit test parse JSON + phiên bản + release notes + giao thức cast | ✅ 19/19 pass |
 | `aapt2 dump badging` | ✅ có `leanback-launchable-activity`, banner 320×180, minSdk 21, targetSdk 34 |
-| Kích thước APK release | 3.04 MB |
+| Kích thước APK release | 3.07 MB (v1.2.0) |
 | **Chạy thật trên box N5Max (S905X2, Android 9, 1920×1080@320dpi)** | ✅ xem phim 1080p bằng giải mã cứng `OMX.amlogic.avc.decoder` |
 | Tìm kiếm trên box | ✅ phím **Space** ở hàng cuối, gõ bàn phím, bấm chuột chèn khoảng trắng và mở phim |
 | Điều khiển trình phát trên box | ✅ OK/▲/▼ hiện thanh công cụ; ◀/▶ nhấn tua ±10s, **giữ để tua tăng dần** kèm OSD |
@@ -149,6 +178,7 @@ com.auraflix.tv
 │   ├── net/                # OkHttp + kotlinx.serialization (cache 128MB)
 │   ├── repo/               # MovieRepository, UserDataRepository (DataStore)
 │   ├── update/             # AppVersion (so sánh phiên bản), UpdateManager (OTA)
+│   ├── cast/               # Điều khiển TV ↔ Mobile trong LAN: server + discovery, client, giao thức
 │   └── util/               # format thời gian, text
 ├── ui/
 │   ├── theme/              # màu, MaterialTheme cho TV
@@ -162,6 +192,8 @@ com.auraflix.tv
 - **Không dùng Leanback library**: Compose for TV với `Modifier` focus tự viết để
   kiểm soát hoàn toàn hành vi D-pad trên các box Trung Quốc/Amlogic.
 - **Cache**: OkHttp 128MB + cache RAM 5 phút cho danh sách, 15 phút cho chi tiết.
+- **Điều khiển từ điện thoại**: HTTP server + UDP discovery viết tay trong `:shared/core/cast`
+  (không cần Kotlin/NanoHTTPD), chạy trong thread nền của Application.
 - `minSdk 21`, `targetSdk 34`, `compileSdk 35`.
 
 ## 6. Nguồn dữ liệu (API)
@@ -187,6 +219,7 @@ Nếu domain API thay đổi, vào **Cài đặt → Máy chủ dữ liệu phim
 | Cập nhật báo lỗi mạng | Kiểm tra Internet rồi bấm **Kiểm tra cập nhật** lại; box cần truy cập được `api.github.com` |
 | Bấm Cài đặt ngay nhưng không hiện hộp thoại | Bật *Cài đặt ứng dụng không rõ nguồn gốc* cho AuraFlix trong phần Cài đặt Android, rồi bấm lại |
 | Remote không di chuyển | Đảm bảo dùng remote/chuột bay ở chế độ D-pad, không phải chế độ chuột |
+| Điện thoại không tìm thấy TV | Mục *Cài đặt → Điều khiển bằng điện thoại* phải đang **Bật**; hai máy chung Wi-Fi; router chặn broadcast → nhập tay IP TV ([chi tiết](docs/CAST.md)) |
 | App không hiện trên launcher | Box không chuẩn Android TV → mở bằng mục *Ứng dụng* hoặc qua ADB (`am start`) |
 
 ## 8. Giấy phép

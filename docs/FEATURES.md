@@ -224,6 +224,7 @@ Nguồn cập nhật: GitHub Releases của `haokiet97/auraflix_tv_release`.
 | **Nguồn phát mặc định** | Tự động / Vietsub / Thuyết Minh / Lồng Tiếng — ưu tiên server tương ứng khi mở phim |
 | **Xem tiếp** | Bật/tắt tự đề xuất và khôi phục vị trí đã xem |
 | **Máy chủ dữ liệu phim** | Chọn domain API dự phòng khi domain chính gặp sự cố |
+| **Điều khiển bằng điện thoại** | Bật/tắt server trong LAN, xem **mã PIN** + **IP của TV**, đổi PIN, ngắt thiết bị đã ghép ([chi tiết](CAST.md)) |
 | **Cập nhật ứng dụng** | Kiểm tra và cài bản mới OTA |
 | **Dữ liệu → Xoá lịch sử xem** | Xoá toàn bộ lịch sử xem cục bộ |
 | **Giới thiệu** | Phiên bản app và disclaimer bản quyền |
@@ -237,6 +238,7 @@ Nguồn cập nhật: GitHub Releases của `haokiet97/auraflix_tv_release`.
 - Lịch sử xem: slug phim, tên, poster, tập, nguồn, vị trí, thời lượng, thời điểm.
 - Danh sách yêu thích.
 - Cài đặt: nguồn ưu tiên, chế độ xem tiếp, domain API.
+- Điều khiển từ điện thoại: trạng thái bật/tắt, tên TV, PIN 6 số và danh sách token đã cấp.
 - Cache HTTP (OkHttp) và cache ảnh (Coil) để tăng tốc tải lại.
 
 Không có tài khoản, không gửi dữ liệu cá nhân lên máy chủ. Xoá lịch sử trong Cài đặt chỉ xoá dữ liệu cục bộ.
@@ -254,6 +256,7 @@ Không có tài khoản, không gửi dữ liệu cá nhân lên máy chủ. Xo�
 | Cập nhật báo lỗi mạng | Kiểm tra Internet; box cần truy cập được `api.github.com` |
 | Bấm **Cài đặt ngay** không hiện hộp thoại | Bật *Cài đặt ứng dụng không rõ nguồn gốc* cho AuraFlix rồi bấm lại |
 | Remote không di chuyển | Dùng remote/chuột bay ở chế độ D-pad, không phải chế độ chuột |
+| Điện thoại không tìm thấy TV | *Cài đặt → Điều khiển bằng điện thoại* đang **Bật**; chung Wi-Fi; nhập tay IP TV nếu router chặn broadcast ([chi tiết](CAST.md)) |
 | App không hiện trên launcher | Box không chuẩn Android TV → mở từ mục *Ứng dụng* hoặc ADB |
 
 ---
@@ -262,7 +265,9 @@ Không có tài khoản, không gửi dữ liệu cá nhân lên máy chủ. Xo�
 
 | Phiên bản | Nội dung chính |
 |---|---|
-| **1.1.3** | **Giữ ◀/▶ để tua tăng tốc** (10→60 giây/bước), OSD tổng thời lượng tua; tài liệu tính năng chi tiết |
+| **1.2.0** | **Điều khiển bằng điện thoại** trong cùng Wi-Fi: ghép cặp PIN, chọn phim/phát trên TV từ mobile, tua/chuyển tập từ điện thoại ([CAST.md](CAST.md), [ghi chú](RELEASE_NOTES_v1.2.0.md)) |
+| 1.1.3 | **Giữ ◀/▶ để tua tăng tốc** (10→60 giây/bước), OSD tổng thời lượng tua; tài liệu tính năng chi tiết |
+| *chưa phát hành* | **Điều khiển bằng điện thoại** trong cùng Wi-Fi: ghép cặp PIN, chọn phim/phát trên TV từ mobile, tua/chuyển tập từ điện thoại ([CAST.md](CAST.md)) |
 | 1.1.2 | Nhấn OK/▲/▼/◀/▶ hiện thanh công cụ; không tua nhầm khi mở overlay |
 | 1.1.1 | Phím Space ở hàng chữ cuối; bàn phím cuộn được trên TV thấp |
 | 1.1.0 | Bàn phím USB/Bluetooth, chuột/chuột bay; cập nhật OTA trong Cài đặt |
@@ -279,6 +284,7 @@ Không có tài khoản, không gửi dữ liệu cá nhân lên máy chủ. Xo�
 | HTTP/JSON | OkHttp + kotlinx.serialization |
 | Ảnh | Coil 3 + OkHttp cache |
 | Lưu trữ | DataStore Preferences + JSON |
+| LAN remote | TCP/HTTP server + UDP discovery tự viết (`ServerSocket`/`DatagramSocket`), OkHttp client trên điện thoại |
 | DI | ServiceLocator thủ công |
 | Build | Kotlin 2.0 · AGP 8.7 · JDK 17 · minSdk 21 · targetSdk 34 |
 
@@ -289,6 +295,7 @@ Luồng dữ liệu: `API phimapi.com` → `MovieRepository` (cache RAM + HTTP c
 
 ## 15. Phạm vi & ghi chú
 
-- Không có Live TV / bóng đá, tài khoản đăng nhập, bình luận, tải offline hoặc cast.
+- Không có Live TV / bóng đá, tài khoản đăng nhập, bình luận hoặc tải offline.
+  Điều khiển bằng điện thoại chỉ hoạt động trong cùng mạng LAN (không đi qua Internet).
 - Không lưu trữ hay phát tán nội dung phim; ứng dụng chỉ là trình duyệt nội dung công khai.
 - Chỉ dùng cho mục đích cá nhân.
