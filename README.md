@@ -34,6 +34,7 @@ giao diện điều khiển hoàn toàn bằng remote.
 
 | Phiên bản | Tệp | Dung lượng | SHA-256 |
 |---|---|---|---|
+| 1.3.0 | [`AuraFlixTV-1.3.0.apk`](AuraFlixTV-1.3.0.apk) | 3.07 MB | `5DFF7C45E9AA247466B1DFEEE233B91D59AFC4B4C1E18C47CF5CBB210E107A17` |
 | 1.2.0 | [`AuraFlixTV-1.2.0.apk`](AuraFlixTV-1.2.0.apk) | 3.07 MB | `29C69408C117D4A90CC5557238CE74B3D32F1441515ED5E600F93C8EB9F0022A` |
 | 1.1.3 | [`AuraFlixTV-1.1.3.apk`](AuraFlixTV-1.1.3.apk) | 3.04 MB | `EDCCE6C960BA70475F45B2236A65B384559EE6E0EC31A5C8CD3A71275054C83F` |
 | 1.1.2 | [`AuraFlixTV-1.1.2.apk`](AuraFlixTV-1.1.2.apk) | 3.04 MB | `62DAE787935D7E62FFA7CBABECAD40C3BF474AF319DD0915BA0B32BE6F8D3409` |
@@ -53,7 +54,7 @@ Bản phát hành kèm APK cũng nằm ở tab **Releases**:
 Kiểm tra file sau khi tải (Windows PowerShell):
 
 ```powershell
-Get-FileHash .\AuraFlixTV-1.2.0.apk -Algorithm SHA256
+Get-FileHash .\AuraFlixTV-1.3.0.apk -Algorithm SHA256
 ```
 
 ## Tải APK Mobile (điện thoại)
@@ -156,7 +157,7 @@ tạo keystore riêng và cấu hình `signingConfigs` trong `app/build.gradle.k
 | `assembleDebug` / `assembleRelease` | ✅ thành công, không lỗi biên dịch |
 | Unit test parse JSON + phiên bản + release notes + giao thức cast | ✅ 19/19 pass |
 | `aapt2 dump badging` | ✅ có `leanback-launchable-activity`, banner 320×180, minSdk 21, targetSdk 34 |
-| Kích thước APK release | 3.07 MB (v1.2.0) |
+| Kích thước APK release | 3.07 MB (v1.3.0) |
 | **Chạy thật trên box N5Max (S905X2, Android 9, 1920×1080@320dpi)** | ✅ xem phim 1080p bằng giải mã cứng `OMX.amlogic.avc.decoder` |
 | Tìm kiếm trên box | ✅ phím **Space** ở hàng cuối, gõ bàn phím, bấm chuột chèn khoảng trắng và mở phim |
 | Điều khiển trình phát trên box | ✅ OK/▲/▼ hiện thanh công cụ; ◀/▶ nhấn tua ±10s, **giữ để tua tăng dần** kèm OSD |
